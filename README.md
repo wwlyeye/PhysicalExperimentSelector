@@ -1,6 +1,6 @@
 # 北京航空航天大学基物实验抢课辅助软件
 #### Robbing machine for Physical Experiment Course of Beihang University
-#### v2.1.1
+#### v2.2.0
 
 ## 该代码仅供学习交流，请勿真实使用 :warning:
 不建议将其分享给你的朋友使用，不建议很多人同时使用脚本抢课，把服务器炸了，把课给冲没了。
@@ -26,6 +26,8 @@
 7. 若抢课成功或出现不可继续抢课的错误或超时则抢课进程会停止。
 
 ## OCR 说明
+将local设置为true即使用手写的简易本地OCR识别验证码，为false则使用BaiduAI提供的OCR
+
 在 [BaiduAI](https://ai.baidu.com/tech/ocr) 注册账号，申请免费的通用文字识别。
 
 **创建应用**后点击**管理应用**可以看到表头为AppID, API Key, Secret Key的表格，将这三个值填入配置文件的对应的位置。
