@@ -1,0 +1,8 @@
+.idea
+.DS_Store
+test
+__pycache__
+config.toml
+session.txt
+log
+tmp

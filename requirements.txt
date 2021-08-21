@@ -1,0 +1,13 @@
+brotlipy==0.7.0
+certifi==2020.12.5
+cffi
+chardet
+cryptography
+idna
+pycparser
+pyOpenSSL
+PySocks
+requests
+six
+urllib3
+toml
