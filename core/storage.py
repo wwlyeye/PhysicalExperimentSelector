@@ -41,6 +41,7 @@ password = ""
 
 # ocr部分介绍详见README.md
 [ocr]
+local = true
 appid = ""
 api-key = ""
 secret-key = ""

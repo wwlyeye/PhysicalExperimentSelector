@@ -25,12 +25,12 @@ class OCR:
         # 二进制方式打开图片文件
         try:
             f = open(filepath, 'rb')
-            return self.number_from_bin(f.read())
+            return self.number_from_bytes(f.read())
         except Exception as e:
             logger.warning("failed to open the file: " + str(e))
             return None
 
-    def number_from_bin(self, img_bin: bytes):
+    def number_from_bytes(self, img_bin: bytes):
         request_url = "https://aip.baidubce.com/rest/2.0/ocr/v1/numbers"
         img_b64 = base64.b64encode(img_bin)
         params = {"image": img_b64}

@@ -4,9 +4,10 @@ import requests
 import threading
 from datetime import datetime
 
-from core import ocr
+from core.ocr import OCR
 from core.log import logger
 from core.storage import config, Session
+from core.simple_ocr import SimpleOCR
 
 # 常量
 url = config.net['url']
@@ -110,6 +111,10 @@ class RobberManager:
         self.robbers = []
         self.sessions = []
         self.login()
+        if config.ocr['local']:
+            self.ocr = SimpleOCR()
+        else:
+            self.ocr = OCR()
 
     @property
     def login_data(self):
@@ -126,8 +131,7 @@ class RobberManager:
             session.get(url + 'index.php')
             response = session.get(url + 'checkcode.php')
             img_bin = response.content
-            o = ocr.OCR()
-            self.checkcode = o.number_from_bin(img_bin)
+            self.checkcode = self.ocr.number_from_bytes(img_bin)
             if not self.checkcode:
                 logger.info("Failed to get checkcode, retry:{}".format(retry + 1))
                 continue
